@@ -1,0 +1,5 @@
+"Metric","Value"
+"Maximum Cook's distance",0.00213842834864002
+"Cases with Cook's distance > 4/n",3338
+"Non-constant variance test chi-square",307.266062354174
+"Non-constant variance test p-value",8.60603266474238e-69

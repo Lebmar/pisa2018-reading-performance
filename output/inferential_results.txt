@@ -1,0 +1,254 @@
+DESCRIPTIVE STATISTICS
+     Variable     N Missing          Mean         SD     Min   Median      Max
+1     PV1READ 80016       0 525.632964507 99.9734124 89.4330 530.7845 878.8620
+2        ESCS 78193    1823   0.031486521  0.9524555 -6.7598   0.1204   4.0373
+3       GRADE 80016       0  -0.159593081  0.5164542 -3.0000   0.0000   2.0000
+4     JOYREAD 77834    2182   0.207993430  1.0810858 -2.7316   0.1667   2.6574
+5  SCREADCOMP 76187    3829   0.020483828  0.9743147 -2.4403   0.1222   1.8839
+6  SCREADDIFF 76299    3717   0.061322194  0.9862686 -1.8876  -0.0697   2.7752
+7      UNDREM 74706    5310  -0.037822665  1.0074754 -1.6400   0.1000   1.5000
+8     METASUM 74864    5152  -0.090410478  1.0090404 -1.7200   0.2100   1.3600
+9    METASPAM 74408    5608   0.008820423  1.0056998 -1.4100  -0.0400   1.3300
+10    EFFORT1 71813    8203   7.897567293  1.8406500  1.0000   8.0000  10.0000
+
+MISSING DATA
+     Variable N_nonmissing Missing Missing_percent
+1     PV1READ        80016       0       0.0000000
+2        ESCS        78193    1823       2.2782943
+3       Books        78255    1761       2.2008098
+4      Gender        80014       2       0.0024995
+5     Country        80016       0       0.0000000
+6       GRADE        80016       0       0.0000000
+7      REPEAT        77484    2532       3.1643671
+8     JOYREAD        77834    2182       2.7269546
+9  SCREADCOMP        76187    3829       4.7852929
+10 SCREADDIFF        76299    3717       4.6453209
+11     UNDREM        74706    5310       6.6361728
+12    METASUM        74864    5152       6.4387123
+13   METASPAM        74408    5608       7.0085983
+14    EFFORT1        71813    8203      10.2516997
+
+BOOK FREQUENCIES
+                Books     N   Percent
+1          0-10 books  9284 11.863779
+2         11-25 books 12430 15.883969
+3        26-100 books 25609 32.725065
+4       101-200 books 14462 18.480608
+5       201-500 books 11300 14.439972
+6 More than 500 books  5170  6.606607
+
+GRADE-REPETITION FREQUENCIES
+  Repeated_grade     N   Percent
+1             No 72198 93.177946
+2            Yes  5286  6.822054
+
+GENDER DESCRIPTIVES
+  Gender     N     Mean        SD
+1 Female 39424 539.5244  93.96334
+2   Male 40590 512.1462 103.71384
+
+BOOK DESCRIPTIVES
+                Books     N     Mean        SD        SE  Lower95  Upper95
+1          0-10 books  9284 462.3181  94.57116 0.9815019 460.3944 464.2419
+2         11-25 books 12430 498.0445  91.66244 0.8221590 496.4331 499.6560
+3        26-100 books 25609 528.3527  91.96602 0.5746866 527.2263 529.4791
+4       101-200 books 14462 547.0127  94.21434 0.7834348 545.4772 548.5483
+5       201-500 books 11300 569.0199  96.05616 0.9036204 567.2488 570.7910
+6 More than 500 books  5170 557.3183 107.17256 1.4905218 554.3969 560.2397
+
+GENDER LEVENE TEST
+Levene's Test for Homogeneity of Variance (center = median)
+         Df F value    Pr(>F)    
+group     1  410.26 < 2.2e-16 ***
+      80012                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+WELCH T-TEST
+
+	Welch Two Sample t-test
+
+data:  PV1READ by gender
+t = 39.153, df = 79629, p-value < 2.2e-16
+alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+95 percent confidence interval:
+ 26.00763 28.74870
+sample estimates:
+mean in group Female   mean in group Male 
+            539.5244             512.1462 
+
+
+BOOKS LEVENE TEST
+Levene's Test for Homogeneity of Variance (center = median)
+         Df F value    Pr(>F)    
+group     5  34.412 < 2.2e-16 ***
+      78249                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+WELCH ONE-WAY ANOVA
+
+	One-way analysis of means (not assuming equal variances)
+
+data:  PV1READ and books
+F = 1761.8, num df = 5, denom df = 26356, p-value < 2.2e-16
+
+
+PAIRWISE WELCH TESTS WITH HOLM ADJUSTMENT
+
+	Pairwise comparisons using t tests with non-pooled SD 
+
+data:  anova_data$PV1READ and anova_data$books 
+
+                    0-10 books 11-25 books 26-100 books 101-200 books 201-500 books
+11-25 books         < 2e-16    -           -            -             -            
+26-100 books        < 2e-16    < 2e-16     -            -             -            
+101-200 books       < 2e-16    < 2e-16     < 2e-16      -             -            
+201-500 books       < 2e-16    < 2e-16     < 2e-16      < 2e-16       -            
+More than 500 books < 2e-16    < 2e-16     < 2e-16      9.8e-10       4.0e-11      
+
+P value adjustment method: holm 
+
+PEARSON CORRELATION
+
+	Pearson's product-moment correlation
+
+data:  cor_data$ESCS and cor_data$PV1READ
+t = 66.62, df = 78191, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.2251175 0.2383829
+sample estimates:
+     cor 
+0.231761 
+
+
+REGRESSION MODEL COMPARISON
+                                  Model     N        R2 Adjusted_R2 Residual_SE
+1      Background and education context 63284 0.1884006   0.1881697    86.44423
+2 + reading engagement and self-concept 63284 0.2840964   0.2838587    81.19004
+3    + metacognitive strategy knowledge 63284 0.4313885   0.4311728    72.35917
+4                         + test effort 63284 0.4371148   0.4368923    71.99447
+
+NESTED MODEL TESTS
+Analysis of Variance Table
+
+Model 1: PV1READ ~ ESCS + books + gender + country + GRADE + repeat_grade
+Model 2: PV1READ ~ ESCS + books + gender + country + GRADE + repeat_grade + 
+    JOYREAD + SCREADCOMP + SCREADDIFF
+Model 3: PV1READ ~ ESCS + books + gender + country + GRADE + repeat_grade + 
+    JOYREAD + SCREADCOMP + SCREADDIFF + UNDREM + METASUM + METASPAM
+Model 4: PV1READ ~ ESCS + books + gender + country + GRADE + repeat_grade + 
+    JOYREAD + SCREADCOMP + SCREADDIFF + UNDREM + METASUM + METASPAM + 
+    EFFORT1
+  Res.Df       RSS Df Sum of Sq       F    Pr(>F)    
+1  63265 472754375                                   
+2  63262 417011857  3  55742518 3584.82 < 2.2e-16 ***
+3  63259 331214615  3  85797241 5517.65 < 2.2e-16 ***
+4  63258 327879081  1   3335535  643.53 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+FINAL REGRESSION MODEL
+
+Call:
+lm(formula = PV1READ ~ ESCS + books + gender + country + GRADE + 
+    repeat_grade + JOYREAD + SCREADCOMP + SCREADDIFF + UNDREM + 
+    METASUM + METASPAM + EFFORT1, data = reg_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-382.54  -46.60    1.25   48.48  411.69 
+
+Coefficients:
+                         Estimate Std. Error t value Pr(>|t|)    
+(Intercept)              469.4396     1.6747 280.307  < 2e-16 ***
+ESCS                      10.5247     0.3745  28.103  < 2e-16 ***
+books11-25 books           8.2955     1.1529   7.195 6.31e-13 ***
+books26-100 books         19.3722     1.0619  18.243  < 2e-16 ***
+books101-200 books        26.3905     1.2002  21.989  < 2e-16 ***
+books201-500 books        34.3856     1.3018  26.415  < 2e-16 ***
+booksMore than 500 books  27.0443     1.5714  17.211  < 2e-16 ***
+genderMale                -0.7306     0.6013  -1.215   0.2244    
+countryEST                 7.6682     1.2576   6.097 1.08e-09 ***
+countryFIN                 1.6397     1.2428   1.319   0.1870    
+countryHKG                47.0599     1.2633  37.252  < 2e-16 ***
+countryIRL               -10.3253     1.2865  -8.026 1.02e-15 ***
+countryKOR                 7.1525     1.1607   6.162 7.21e-10 ***
+countryMAC                43.1059     1.4439  29.854  < 2e-16 ***
+countryPOL                 2.4469     1.2606   1.941   0.0523 .  
+countryQCI                36.6123     1.0520  34.802  < 2e-16 ***
+countrySGP                34.0682     1.1660  29.218  < 2e-16 ***
+GRADE                     14.7164     0.6820  21.579  < 2e-16 ***
+repeat_gradeYes          -29.7745     1.3460 -22.120  < 2e-16 ***
+JOYREAD                    8.8986     0.3459  25.725  < 2e-16 ***
+SCREADCOMP                12.6169     0.3811  33.106  < 2e-16 ***
+SCREADDIFF                -8.2075     0.3311 -24.786  < 2e-16 ***
+UNDREM                     8.6546     0.3344  25.880  < 2e-16 ***
+METASUM                   15.9672     0.3492  45.728  < 2e-16 ***
+METASPAM                  25.2475     0.3220  78.418  < 2e-16 ***
+EFFORT1                    4.2872     0.1690  25.368  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 71.99 on 63258 degrees of freedom
+Multiple R-squared:  0.4371,	Adjusted R-squared:  0.4369 
+F-statistic:  1965 on 25 and 63258 DF,  p-value: < 2.2e-16
+
+
+HC3 ROBUST COEFFICIENTS
+                       Term    Estimate Robust_SE    t_value       p_value      Lower95     Upper95
+1               (Intercept) 469.4395786 1.8467192 254.201927  0.000000e+00 465.82000621 473.0591510
+2                      ESCS  10.5246804 0.3902324  26.970288 2.642689e-159   9.75982429  11.2895365
+3          books11-25 books   8.2954839 1.1894225   6.974379  3.102272e-12   5.96421396  10.6267539
+4         books26-100 books  19.3721765 1.0981988  17.639955  1.784408e-69  17.21970525  21.5246477
+5        books101-200 books  26.3904643 1.2330734  21.402184 2.920365e-101  23.97363859  28.8072900
+6        books201-500 books  34.3855913 1.3496463  25.477483 1.840121e-142  31.74028252  37.0309002
+7  booksMore than 500 books  27.0443220 1.6536395  16.354424  5.373890e-60  23.80318609  30.2854578
+8                genderMale  -0.7306156 0.6002128  -1.217261  2.235095e-01  -1.90703347   0.4458023
+9                countryEST   7.6681567 1.2200787   6.284969  3.300494e-10   5.27680049  10.0595128
+10               countryFIN   1.6397078 1.1688634   1.402822  1.606747e-01  -0.65126613   3.9306817
+11               countryHKG  47.0598969 1.3272065  35.457856 1.055229e-272  44.45857021  49.6612236
+12               countryIRL -10.3252753 1.1971305  -8.625021  6.553516e-18 -12.67165281  -7.9788977
+13               countryKOR   7.1524549 1.2106889   5.907756  3.485663e-09   4.77950292   9.5254069
+14               countryMAC  43.1058513 1.5129086  28.492039 1.957268e-177  40.14054814  46.0711545
+15               countryPOL   2.4468674 1.2548480   1.949931  5.118872e-02  -0.01263652   4.9063713
+16               countryQCI  36.6122519 1.0466056  34.981899 1.476450e-265  34.56090337  38.6636005
+17               countrySGP  34.0681959 1.2712050  26.799923 2.463044e-157  31.57663225  36.5597595
+18                    GRADE  14.7163614 0.6892828  21.350251 8.813436e-101  13.36536604  16.0673567
+19          repeat_gradeYes -29.7744749 1.4551626 -20.461269  9.534429e-93 -32.62659585 -26.9223540
+20                  JOYREAD   8.8985700 0.3487157  25.518124 6.587156e-143   8.21508672   9.5820532
+21               SCREADCOMP  12.6169187 0.4143717  30.448313 3.671903e-202  11.80474962  13.4290879
+22               SCREADDIFF  -8.2074519 0.3623907 -22.648072 4.116337e-113  -8.91773835  -7.4971655
+23                   UNDREM   8.6545759 0.3379762  25.607054 6.918831e-144   7.99214198   9.3170099
+24                  METASUM  15.9671879 0.3529737  45.236199  0.000000e+00  15.27535899  16.6590169
+25                 METASPAM  25.2474526 0.3226884  78.240955  0.000000e+00  24.61498272  25.8799224
+26                  EFFORT1   4.2872153 0.1919187  22.338702 4.155218e-110   3.91105431   4.6633763
+
+MULTICOLLINEARITY
+                     Term     GVIF Df Adjusted_GVIF
+ESCS                 ESCS 1.544910  1      1.242944
+books               books 1.537956  5      1.043985
+gender             gender 1.103641  1      1.050543
+country           country 2.123197  9      1.042716
+GRADE               GRADE 1.448891  1      1.203699
+repeat_grade repeat_grade 1.318701  1      1.148347
+JOYREAD           JOYREAD 1.712002  1      1.308435
+SCREADCOMP     SCREADCOMP 1.661882  1      1.289140
+SCREADDIFF     SCREADDIFF 1.281667  1      1.132107
+UNDREM             UNDREM 1.374807  1      1.172522
+METASUM           METASUM 1.492580  1      1.221712
+METASPAM         METASPAM 1.271139  1      1.127448
+EFFORT1           EFFORT1 1.110412  1      1.053761
+
+NON-CONSTANT VARIANCE TEST
+Non-constant Variance Score Test 
+Variance formula: ~ fitted.values 
+Chisquare = 307.2661, Df = 1, p = < 2.22e-16
+
+INFLUENCE DIAGNOSTICS
+                                 Metric        Value
+1               Maximum Cook's distance 2.138428e-03
+2      Cases with Cook's distance > 4/n 3.338000e+03
+3 Non-constant variance test chi-square 3.072661e+02
+4    Non-constant variance test p-value 8.606033e-69
